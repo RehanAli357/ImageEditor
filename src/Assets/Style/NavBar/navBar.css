@@ -1,0 +1,68 @@
+nav {
+  background-color: black;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+nav .Logo {
+  width: 50em;
+  border-radius: 100%;
+  cursor: default;
+}
+nav .Logo img {
+  width: 100%;
+}
+nav .Logo b {
+  font-size: 3rem;
+  color: white;
+}
+nav .Logo b span {
+  font-size: 3rem;
+  color: gold;
+}
+nav .navBar ul {
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  margin-right: 2rem;
+}
+nav .navBar ul li img {
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+  border: 0.2em solid white;
+}
+nav .MobNav {
+  display: none;
+}
+nav .MobNav .MobNavBtn {
+  margin-right: 10em;
+}
+nav .MobNav .MobNavBtn img {
+  width: 50em;
+  cursor: pointer;
+}
+nav .MobNav .MobNavBar {
+  position: absolute;
+  top: 80em;
+  right: 0;
+  width: 200em;
+  background-color: rgba(0, 0, 0, 0.804);
+  z-index: 100;
+  transition: 0.2s;
+  height: 89vh;
+}
+nav .MobNav .MobNavBar ul {
+  flex-direction: column;
+}
+nav .MobNav .MobNavBar ul li {
+  margin-top: 100%;
+}
+
+@media (max-width: 706px) {
+  nav .navBar {
+    display: none;
+  }
+  nav .MobNav {
+    display: flex;
+  }
+}/*# sourceMappingURL=navBar.css.map */

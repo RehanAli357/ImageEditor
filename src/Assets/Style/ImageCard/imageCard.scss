@@ -1,0 +1,44 @@
+.ImageCard{
+    width: 350em;
+    background: linear-gradient(45deg,red,hotpink);
+    box-shadow: 5em 5em 6em black;
+    padding: 16em 0em;
+    margin: 2% 0;
+    border-radius: 10em;
+    .Image{
+        margin: auto;
+        width: 90%;
+        border: 1em solid black;
+        border-radius: 10em;
+        overflow: hidden;
+        img{
+            width: 100%;
+            transition: 0.2s;
+            &:hover{
+                transition: 0.2s;
+                transform: scale(1.2);
+            }
+        }
+    }
+    .ImageCardBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10em;
+        button{
+            font-size: 2rem;
+            padding: 0.2em 1em;
+            border: 0.1em solid black;
+            border-radius: 10em;
+            background-color: transparent;
+            transition: 0.5s;
+            &:hover{
+                transition: 0.5s;
+                background: linear-gradient(120deg,rgb(255, 247, 0),rgb(105, 255, 178));
+                box-shadow: 0.1em 0.1em 0.1em rgb(0, 0, 0);
+                cursor: pointer;
+            }
+        }
+    }
+}

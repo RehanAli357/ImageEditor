@@ -1,0 +1,47 @@
+.ImageCanva {
+  width: 100%;
+  background: linear-gradient(45deg, rgb(105, 175, 255), rgb(234, 0, 255));
+  padding: 2% 0;
+  h1{
+    text-align: center;
+    font-size: 4rem;
+    color: aliceblue;
+    margin-bottom: 1em;
+  }
+  .ImgCanvaCard {
+    width: 70%;
+    padding: 2%;
+    margin: auto;
+    background: rgba(255, 247, 247, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+      0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    .ImgCanvaCardPic{
+        width: 50%;
+        .canvas{
+            cursor: pointer;
+        }
+    }
+    .CanvasOption{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        button{
+            background-color: black;
+            padding: 0.5em 0.2em;
+            border-radius: 10em;
+            color: aliceblue;
+            font-size: 1.5rem;
+            width: 10em;
+            margin: 1%;
+            font-weight: bold;
+            border: transparent;
+            cursor: pointer;
+        }
+    }
+  }
+}

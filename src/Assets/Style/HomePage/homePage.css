@@ -1,0 +1,79 @@
+.HomePage {
+  width: 100%;
+}
+.HomePage .BgImage {
+  width: 100%;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.HomePage .BgImage img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+.HomePage .BgImage .HeroSection {
+  width: 100%;
+}
+.HomePage .BgImage .HeroSection h1 {
+  background: rgba(255, 247, 247, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  margin: auto;
+  padding: 0.2em 1em;
+  font-size: 10rem;
+  color: aliceblue;
+}
+.HomePage .BgImage .HeroSection h1 span {
+  font-size: 6.5rem;
+  color: gold;
+}
+.HomePage .BgImage .ExploreBtn {
+  margin-top: 5%;
+}
+.HomePage .BgImage .ExploreBtn button {
+  font-size: 2rem;
+  padding: 0.2em 1em;
+  background-color: black;
+  border-radius: 10em;
+  border: 0.1em solid black;
+  color: aliceblue;
+  transition: 0.2s;
+}
+.HomePage .BgImage .ExploreBtn button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media (max-width: 609px) {
+  .HomePage .BgImage .HeroSection h1 {
+    font-size: 7rem;
+  }
+  .HomePage .BgImage .HeroSection h1 span {
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 417px) {
+  .HomePage .BgImage .HeroSection h1 {
+    font-size: 6rem;
+  }
+  .HomePage .BgImage .HeroSection h1 span {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 365px) {
+  .HomePage .BgImage .HeroSection h1 {
+    font-size: 5rem;
+  }
+  .HomePage .BgImage .HeroSection h1 span {
+    font-size: 3.5rem;
+  }
+}/*# sourceMappingURL=homePage.css.map */

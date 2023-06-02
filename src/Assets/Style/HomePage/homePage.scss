@@ -1,0 +1,99 @@
+.HomePage {
+  width: 100%;
+  .BgImage {
+    width: 100%;
+    min-height: 90vh;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: -1;
+    }
+    .HeroSection {
+      width: 100%;
+      h1 {
+        background: rgba(255, 247, 247, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+          0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(10.5px);
+        -webkit-backdrop-filter: blur(10.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: center;
+        margin: auto;
+        padding: 0.2em 1em;
+        font-size: 10rem;
+        color: aliceblue;
+        span {
+          font-size: 6.5rem;
+          color: gold;
+        }
+      }
+    }
+    .ExploreBtn {
+      margin-top: 5%;
+      button {
+        font-size: 2rem;
+        padding: 0.2em 1em;
+        background-color: black;
+        border-radius: 10em;
+        border: 0.1em solid black;
+        color: aliceblue;
+        transition: 0.2s;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 609px) {
+  .HomePage {
+    .BgImage {
+      .HeroSection {
+        h1 {
+          font-size: 7rem;
+          span {
+            font-size: 4.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 417px) {
+  .HomePage {
+    .BgImage {
+      .HeroSection {
+        h1 {
+          font-size: 6rem;
+          span {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 365px) {
+  .HomePage {
+    .BgImage {
+      .HeroSection {
+        h1 {
+          font-size: 5rem;
+          span {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+}

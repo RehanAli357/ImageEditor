@@ -1,0 +1,111 @@
+.Login {
+  width: 100%;
+  padding: 10em 0;
+  flex-wrap: wrap;
+}
+.Login h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  color: royalblue;
+  -webkit-text-stroke: 0.05em rgb(0, 0, 0);
+  text-decoration: underline;
+  margin-bottom: 2%;
+}
+.Login .LoginCard {
+  display: flex;
+  background-color: aliceblue;
+  box-shadow: 2em 2em 10em black;
+  height: 70vh;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+.Login .LoginCard .LoginOne {
+  width: 45%;
+  height: 100%;
+}
+.Login .LoginCard .LoginOne img {
+  width: 100%;
+  height: 100%;
+}
+.Login .LoginCard .LoginTwo {
+  width: 55%;
+}
+.Login .LoginCard .LoginTwo .Heading {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Login .LoginCard .LoginTwo .Heading h1 {
+  color: crimson;
+  -webkit-text-stroke: 0em transparent;
+  width: 100%;
+}
+.Login .LoginCard .LoginTwo .Heading img {
+  width: 250em;
+  background-color: aliceblue;
+  border-radius: 100%;
+  padding: 20em;
+  margin-top: 5%;
+  border: 10em solid black;
+}
+.Login .LoginCard .LoginTwo .SignUpBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14%;
+}
+.Login .LoginCard .LoginTwo .SignUpBtn button {
+  padding: 0.2em 1em;
+  border-radius: 10em;
+  border: 0.1em solid black;
+  background-color: white;
+  cursor: pointer;
+  font-size: 3rem;
+}
+.Login .LoginCard .LoginTwo .SignUpBtn button img {
+  width: 2em;
+  margin-right: 0.4em;
+}
+
+@media (max-width: 808px) {
+  .Login .LoginCard {
+    width: 70%;
+  }
+}
+@media (max-width: 668px) {
+  .Login .LoginCard {
+    width: 90%;
+  }
+}
+@media (max-width: 517px) {
+  .Login .LoginCard {
+    width: 90%;
+  }
+  .Login .LoginCard .LoginTwo .Heading h1 {
+    font-size: 3rem;
+  }
+  .Login .LoginCard .LoginTwo .Heading img {
+    width: 190em;
+  }
+  .Login .LoginCard .LoginTwo .SignUpBtn button {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 415px) {
+  .Login .LoginCard {
+    width: 70%;
+    flex-direction: column;
+  }
+  .Login .LoginCard .LoginOne {
+    width: 100%;
+    height: 35vh;
+  }
+  .Login .LoginCard .LoginTwo {
+    width: 100%;
+    padding-bottom: 5%;
+  }
+}/*# sourceMappingURL=login.css.map */

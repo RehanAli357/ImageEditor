@@ -1,0 +1,83 @@
+.ImagePage {
+  padding-top: 2%;
+  background: linear-gradient(120deg, rgb(105, 255, 243), rgb(255, 255, 255));
+}
+.ImagePage h1 {
+  font-size: 3rem;
+  color: crimson;
+  text-align: center;
+}
+.ImagePage .ImagePageOne {
+  width: 100%;
+}
+.ImagePage .ImagePageOne .Data {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1%;
+  margin-left: 2%;
+  background: linear-gradient(120deg, rgb(255, 0, 0), rgb(251, 0, 255));
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: aliceblue;
+}
+.ImagePage .ImagePageOne .Data h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.ImagePage .ImagePageOne .Data h3 {
+  font-size: 2rem;
+}
+.ImagePage .ImagePageSearch {
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ImagePage .ImagePageSearch input {
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 0.2em solid blue;
+  background-color: rgba(255, 255, 255, 0.29);
+  padding: 0.2em 1em;
+  outline: none;
+}
+.ImagePage .ImagePageSearch button {
+  font-size: 1.6rem;
+  padding: 0.3em 1em;
+  background: linear-gradient(45deg, red, hotpink);
+  font-weight: bold;
+  outline: none;
+  border: transparent;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.ImagePage .Images {
+  width: 100%;
+  margin-top: 2%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 408px) {
+  .ImagePage .ImagePageOne .Data {
+    margin: 5% auto;
+  }
+}
+@media (max-width: 321px) {
+  .ImagePage .ImagePageOne .Data {
+    margin: 5% auto;
+  }
+  .ImagePage .ImagePageOne .Data h2, .ImagePage .ImagePageOne .Data h3 {
+    font-size: 1.5rem;
+  }
+  .ImagePage .ImagePageSearch input {
+    font-size: 1.2rem;
+  }
+  .ImagePage .ImagePageSearch button {
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=allImages.css.map */

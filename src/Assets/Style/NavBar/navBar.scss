@@ -1,0 +1,73 @@
+nav {
+  background-color: black;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  .Logo {
+    width: 50em;
+    border-radius: 100%;
+    cursor: default;
+    img {
+      width: 100%;
+    }
+    b {
+      font-size: 3rem;
+      color: white;
+      span {
+        font-size: 3rem;
+        color: gold;
+      }
+    }
+  }
+  .navBar {
+    ul {
+      column-gap: 5rem;
+      margin-right: 2rem;
+      li{
+        img{
+          width: 4em;
+          height:4em;
+          border-radius: 100%;
+          border: 0.2em solid white;
+        }
+      }
+    }
+  }
+  .MobNav {
+    display: none;
+    .MobNavBtn {
+      margin-right: 10em;
+      img {
+        width: 50em;
+        cursor: pointer;
+      }
+    }
+    .MobNavBar {
+      position: absolute;
+      top: 80em;
+      right:  0;
+      width: 200em;
+      background-color: rgba(0, 0, 0, 0.804);
+      z-index:100;
+      transition: 0.2s;
+      height: 89vh;
+      ul {
+        flex-direction: column;
+        li {
+          margin-top: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 706px) {
+  nav {
+    .navBar {
+      display: none;
+    }
+    .MobNav {
+      display: flex;
+    }
+  }
+}
