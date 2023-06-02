@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+TO use this application in your local host follow these steps:-
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install NodeJs in Your system ' https://nodejs.org/en/download ' 1.a Check if node has installed in your system or not by writing the comand in your terminal ' node -v '
 
-## Available Scripts
+Then install any one of the dependecie like ' npm install ' or ' yarn install ' to start the development server
+2.a Check if the dependecie has installed in your system or not by writing the comand in your terminal ' npm -v ' or 'yarn -v ' 2.b This will add the package.json file in your system
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Go to the root folder of the project and open the cmd in that folder so that there is no problem occur during the path configuration. And type the command in the cmd ' npm start ' if you have install npm dependencie or type ' yarn start ' if you have install yarn dependencie.
+3. Go to the firebase website ' https://console.firebase.google.com/ ' 
+click on add project->projectname->continue(2X)->Configure Google Analytics->select account->create project
+->continue->go to settings->projectsetting->at the bottom click on ' </> '  icon->Register app->app name->click on Register app
+->copy the the code given in  initialize Firebase and begin using the SDKs for the products you'd like to use. [Please note copy only firebaseConfig object and paste it into another fle and export it into file of firebase present in firebase folder] ->  click on build -> authentication->getStart->Additional providers->google->enable it-> fill Project support email->save. 
+Your App is ready 
+The project will run in your localhost:3000 port no.
