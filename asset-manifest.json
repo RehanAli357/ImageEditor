@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/ImageEditor/static/css/main.736fa523.css",
+    "main.js": "/ImageEditor/static/js/main.1da5cba5.js",
+    "static/js/733.cfaccc20.chunk.js": "/ImageEditor/static/js/733.cfaccc20.chunk.js",
+    "static/css/425.dbfbbe16.chunk.css": "/ImageEditor/static/css/425.dbfbbe16.chunk.css",
+    "static/js/425.e3930853.chunk.js": "/ImageEditor/static/js/425.e3930853.chunk.js",
+    "static/css/134.f8afbc12.chunk.css": "/ImageEditor/static/css/134.f8afbc12.chunk.css",
+    "static/js/134.c2480bcc.chunk.js": "/ImageEditor/static/js/134.c2480bcc.chunk.js",
+    "static/js/882.4335551c.chunk.js": "/ImageEditor/static/js/882.4335551c.chunk.js",
+    "static/media/logo.png": "/ImageEditor/static/media/logo.bfebb4d32f867587564b.png",
+    "static/media/google.png": "/ImageEditor/static/media/google.e12914ad8afda3f6f2e8.png",
+    "static/media/close.png": "/ImageEditor/static/media/close.6ab72434ff6548f56894.png",
+    "index.html": "/ImageEditor/index.html",
+    "main.736fa523.css.map": "/ImageEditor/static/css/main.736fa523.css.map",
+    "main.1da5cba5.js.map": "/ImageEditor/static/js/main.1da5cba5.js.map",
+    "733.cfaccc20.chunk.js.map": "/ImageEditor/static/js/733.cfaccc20.chunk.js.map",
+    "425.dbfbbe16.chunk.css.map": "/ImageEditor/static/css/425.dbfbbe16.chunk.css.map",
+    "425.e3930853.chunk.js.map": "/ImageEditor/static/js/425.e3930853.chunk.js.map",
+    "134.f8afbc12.chunk.css.map": "/ImageEditor/static/css/134.f8afbc12.chunk.css.map",
+    "134.c2480bcc.chunk.js.map": "/ImageEditor/static/js/134.c2480bcc.chunk.js.map",
+    "882.4335551c.chunk.js.map": "/ImageEditor/static/js/882.4335551c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.736fa523.css",
+    "static/js/main.1da5cba5.js"
+  ]
+}
