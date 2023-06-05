@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkimage_editor=self.webpackChunkimage_editor||[]).push([[212],{2212:function(e,n,c){c.r(n),c.d(n,{removeAll:function(){return t},removeSelectedObj:function(){return a}});var t=function(e,n,c){e.canvas._objects.splice(0,e.canvas._objects.length),e.canvas.renderAll(),n([]),c(""),n((function(){return["image"]}))},a=function(e){e.canvas.remove(e.canvas.getActiveObject())}}}]);
+//# sourceMappingURL=212.59a043b1.chunk.js.map

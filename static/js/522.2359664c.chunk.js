@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkimage_editor=self.webpackChunkimage_editor||[]).push([[522],{4522:function(t,e,n){n.r(e),n.d(e,{addText:function(){return u}});var r=n(3433),u=function(t,e,n,u,a,c){a?(t((function(t){return a})),n.addText(e),u(""),c((function(t){return[].concat((0,r.Z)(t),["text"])}))):alert("Enter the Data")}}}]);
+//# sourceMappingURL=522.2359664c.chunk.js.map

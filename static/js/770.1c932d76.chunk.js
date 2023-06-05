@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkimage_editor=self.webpackChunkimage_editor||[]).push([[770],{770:function(e,t,c){c.r(t),c.d(t,{exportSVG:function(){return o}});var o=function(e){try{var t=e.canvas.toSVG(),c=new Blob([t],{type:"image/svg+xml;charset=utf-8"}),o=URL.createObjectURL(c),n=document.createElement("a");n.href=o,n.download="image.svg",document.body.appendChild(n),n.click(),document.body.removeChild(n)}catch(a){console.log(a)}}}}]);
+//# sourceMappingURL=770.1c932d76.chunk.js.map
