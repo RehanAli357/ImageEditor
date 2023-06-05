@@ -11,7 +11,7 @@ import NaviBarLinks from "./NaviBarLinks";
 import { auth } from "../../firebase/firebase";
 const NavBar = () => {
   const [mobNav, setMobnav] = useState("translateY(-1000em)");
-  const {isLogin, setIsLogin}=useContext(LoginContext);
+  const { isLogin, setIsLogin } = useContext(LoginContext);
   const navigate = useNavigate();
 
   const MobNavBtn = () => {
@@ -37,13 +37,9 @@ const NavBar = () => {
         </div>
         <div className="navBar">
           <ul className="FC">
-            <NaviBarLinks setMobnav={setMobnav}
-              mobNav={mobNav}/>
-            {
-              isLogin===true ? (<li><img src={auth.currentUser.photoURL} alt="user" /></li>) :
-              (<></>)
-            }
+            <NaviBarLinks setMobnav={setMobnav} mobNav={mobNav} />
           </ul>
+          
         </div>
         <div className="MobNav FC">
           <div className="MobNavBtn">
@@ -53,10 +49,9 @@ const NavBar = () => {
               <img src={Close} alt="closeMobNav" onClick={MobNavBtn} />
             )}
           </div>
-          <div className="MobNavBar" style={{transform:mobNav}}>
+          <div className="MobNavBar" style={{ transform: mobNav }}>
             <ul className="FC">
-              <NaviBarLinks setMobnav={setMobnav}
-              mobNav={mobNav}/>
+              <NaviBarLinks setMobnav={setMobnav} mobNav={mobNav} />
             </ul>
           </div>
         </div>

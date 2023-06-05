@@ -9,6 +9,15 @@ footer .Fone {
   width: 250em;
   margin: 0% 2%;
 }
+footer .Fone:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .Fone:nth-child(2) img {
+  display: none;
+}
 footer .Fone p {
   font-size: 2rem;
   text-align: center;
@@ -18,14 +27,7 @@ footer .Fone p i {
   font-size: 2rem;
   width: 30%;
   transition: 0.2a;
-  color: aliceblue;
-}
-footer .Fone p i:hover {
-  transition: 0.2s;
-  background: -webkit-linear-gradient(#fff23f, #ff0000);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgb(255, 162, 0);
 }
 footer .Fone p span {
   color: gold;
@@ -33,18 +35,18 @@ footer .Fone p span {
 }
 footer .Fone ul {
   font-size: 2rem;
-  color: aliceblue;
+  color: red;
   text-align: center;
 }
 footer .Fone li {
   text-align: center;
   margin: auto;
-  color: #ff0000;
   margin: 2% 0;
   font-weight: normal;
 }
-footer .Fone img {
+footer .Fone img:nth-child(1) {
   width: 150em;
+  display: block;
 }
 footer .Fone:nth-child(4) {
   justify-content: center;
@@ -58,6 +60,12 @@ footer .Fone:nth-child(4) {
 }
 @media (max-width: 474px) {
   footer .Fone {
-    margin: 2% 0;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    border-bottom: 0.1em solid rgba(60, 60, 60, 0.779);
+  }
+  footer .Fone:nth-last-child(1) {
+    border: none;
   }
 }/*# sourceMappingURL=footer.css.map */

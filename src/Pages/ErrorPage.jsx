@@ -9,7 +9,7 @@ const ErrorPage = () => {
       </h1>
       <button
         onClick={() => {
-          navigate(-1);
+          navigate("/");
         }}
         style={{
           backgroundColor: "black",
@@ -18,7 +18,8 @@ const ErrorPage = () => {
           padding: "0.2em 1em",
           margin: "1em 2em",
           border: "transparent",
-          borderRadius:"10em"
+          borderRadius:"10em",
+          cursor:"pointer"
         }}
       >
         Go Back

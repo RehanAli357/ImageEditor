@@ -1,7 +1,30 @@
-li{
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
+li {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-
+a.active li {
+  color: gold;
+}
+ul{
+    
+img {
+    width: 90em;
+    height: 90em;
+    border-radius: 100%;
+    border: 0.2em solid white;
+  }
+  
+}
+@media (max-width:706px) {
+    ul{
+    
+        img {
+            margin-top: 10%;
+            width: 110em;
+            height: 110em;
+          }
+          
+        }
+}

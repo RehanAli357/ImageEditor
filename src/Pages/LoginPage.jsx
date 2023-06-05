@@ -15,7 +15,7 @@ const LoginPage = () => {
     const getData = async () => {
       try {
         const res = await fetch(
-          `https://api.unsplash.com/search/photos?page=1&query=stones&client_id=${ACCESS_KEY}`
+          `https://api.unsplash.com/search/photos?page=1&query=creative&client_id=${ACCESS_KEY}`
         );
         const data = await res.json();
         setImgURL(data.results[parseInt(no)].urls.raw);
@@ -25,6 +25,7 @@ const LoginPage = () => {
     };
     getData();
   }, [setImgURL]);
+
   const GoogleLogin = () => {
     signInWithPopup(auth, provider).then(() => {
       setIsLogin(true);

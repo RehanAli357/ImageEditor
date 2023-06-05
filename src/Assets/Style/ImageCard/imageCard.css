@@ -1,5 +1,6 @@
 .ImageCard {
   width: 350em;
+  height: 400em;
   background: linear-gradient(45deg, red, hotpink);
   box-shadow: 5em 5em 6em black;
   padding: 16em 0em;
@@ -9,13 +10,18 @@
 .ImageCard .Image {
   margin: auto;
   width: 90%;
+  height: 90%;
   border: 1em solid black;
   border-radius: 10em;
   overflow: hidden;
 }
 .ImageCard .Image img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
   transition: 0.2s;
+  object-fit: cover;
 }
 .ImageCard .Image img:hover {
   transition: 0.2s;

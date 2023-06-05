@@ -25,12 +25,6 @@ nav .navBar ul {
        column-gap: 5rem;
   margin-right: 2rem;
 }
-nav .navBar ul li img {
-  width: 4em;
-  height: 4em;
-  border-radius: 100%;
-  border: 0.2em solid white;
-}
 nav .MobNav {
   display: none;
 }
@@ -48,8 +42,9 @@ nav .MobNav .MobNavBar {
   width: 200em;
   background-color: rgba(0, 0, 0, 0.804);
   z-index: 100;
+  transform: translateY(100em);
   transition: 0.2s;
-  height: 89vh;
+  height: 100vh;
 }
 nav .MobNav .MobNavBar ul {
   flex-direction: column;

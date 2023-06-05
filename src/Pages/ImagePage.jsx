@@ -1,30 +1,44 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
-import {useNavigate} from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom";
 import { fabric } from "fabric";
 import LoginContext from "../Context/LoginContext";
-import { useParams } from "react-router-dom";
 import { ACCESS_KEY } from "../apiKeys";
 import "../Assets/Style/ImageCanva/imageCanva.css";
 const ImagePage = () => {
   const [url, seturl] = useState("");
-  const [layers,setlayers]=useState([]);
-  const {isLogin}=useContext(LoginContext);
-  const [cropImage, setCropImage] = useState(true);
+  const [layers, setlayers] = useState([]);
+  const [tempcaption, setTempCaption] = useState("");
+  const [caption, setCaption] = useState("");
+  const [isloading, setisLoading] = useState(true);
+  const [isdisplay, setisDisplay] = useState("flex");
+  const { isLogin } = useContext(LoginContext);
+  const [cropImage] = useState(true);
   const { editor, onReady } = useFabricJSEditor();
-  const history = [];
   const params = useParams();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
+  console.log();
   useEffect(() => {
     const getImg = async () => {
-      const res = await fetch(
-        `https://api.unsplash.com/photos/${params.id}?&client_id=${ACCESS_KEY}`
-      );
-      const data = await res.json();
-      seturl(data.urls.full);
+      try {
+        if (isloading) {
+          setisDisplay("inline-block");
+        }
+        const res = await fetch(
+          `https://api.unsplash.com/photos/${params.id}?&client_id=${ACCESS_KEY}`
+        );
+        const data = await res.json();
+        seturl(data.urls.full);
+      } catch (error) {
+        alert("Unable To Fetch Data");
+        navigate(-1);
+      } finally {
+        setisLoading(false);
+        setisDisplay("none");
+      }
     };
     getImg();
-  }, [params]);
+  }, [params, navigate]);
   useEffect(() => {
     if (!editor || !fabric) {
       return;
@@ -70,16 +84,14 @@ const ImagePage = () => {
       });
     }
     if (!editor.canvas.__eventListeners["mouse:up"]) {
-      editor.canvas.on("mouse:up", function (opt) {
-        // on mouse up we want to recalculate new interaction
-        // for all objects, so we call setViewportTransform
+      editor.canvas.on("mouse:up", function () {
         this.setViewportTransform(this.viewportTransform);
         this.isDragging = false;
         this.selection = true;
       });
     }
     editor.canvas.renderAll();
-  }, [editor]);
+  }, [editor, cropImage]);
 
   const addBackground = () => {
     if (!editor || !fabric) {
@@ -101,82 +113,161 @@ const ImagePage = () => {
     editor.canvas.setWidth(500);
     addBackground();
     editor.canvas.renderAll();
-    setlayers((pdata)=>{
-      return [...pdata,"image"]
-    })
-    
   }, [editor?.canvas.backgroundImage]);
 
-  const clear = () => {
-    editor.canvas._objects.splice(0, editor.canvas._objects.length);
-    history.splice(0, history.length);
-    editor.canvas.renderAll();
-    setlayers((pdata)=>{
-      return pdata.slice(0,layers.length-1);
-    })
-  };
-  const removeSelectedObject = () => {
-    editor.canvas.remove(editor.canvas.getActiveObject());
-  };
-  const addText = () => {
-    editor.addText("inset text");
-    setlayers((pdata)=>{
-      return [...pdata,"text"]
-    })
-  };
-  const onAddCircle = () => {
-    editor.addCircle();
-    setlayers((pdata)=>{
-      return [...pdata,"shape-circle"]
-    })
-  };
-  const onAddRectangle = () => {
-    editor.addRectangle();
-    setlayers((pdata)=>{
-      return [...pdata,"shape-rectangle"]
-    })
-  };
   const exportSVG = () => {
-     const svg = editor.canvas;
-     console.info(svg);
-
-  };
-  useEffect(()=>{
-    if (isLogin===false) {
-      navigate("/Login");
-      alert("Kindly Login")
+    try {
+      const svg = editor.canvas.toSVG();
+      const blob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "image.svg";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (err) {
+      console.log(err);
     }
-  },[isLogin])
-
+  };
+  useEffect(() => {
+    if (isLogin === false) {
+      navigate("/Login");
+      alert("Kindly Login");
+    } else {
+      setlayers((pdata) => {
+        return [...pdata, "image"];
+      });
+    }
+  }, [isLogin, navigate]);
   return (
     <React.Fragment>
       <div className="ImageCanva">
         <h1>Add Image Caption</h1>
-        <div className="ImgCanvaCard FC">
+        <div className="ImgCanvaCard ">
           <div className="ImgCanvaCardPic">
-            <FabricJSCanvas className="canvas" id="cv" onReady={onReady} />
+            {isloading ? (
+              <React.Fragment>
+                <div className="lds-circle" style={{ display: { isdisplay } }}>
+                  <div></div>
+                </div>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <FabricJSCanvas className="canvas" id="cv" onReady={onReady} />
+              </React.Fragment>
+            )}
           </div>
           <div className="CanvasOption">
-            <button onClick={addText} disabled={!cropImage}>
-              Add Text
+            <div className="CaptionTag">
+              <input
+                type="text"
+                placeholder="Add Caption"
+                value={tempcaption}
+                onChange={(e) => {
+                  setTempCaption(e.target.value);
+                  setCaption(e.target.value);
+                }}
+              />
+              <button
+                onClick={() => {
+                  import("./Functions/AddText/addText").then((data) =>
+                    data.addText(
+                      setCaption,
+                      caption,
+                      editor,
+                      setTempCaption,
+                      tempcaption,
+                      setlayers
+                    )
+                  );
+                }}
+                disabled={!cropImage}
+              >
+                Add Caption
+              </button>
+            </div>
+
+            <button
+              name="circle"
+              onClick={() => {
+                import("./Functions/AddShapes/AddShapes").then((data) =>
+                  data.addCircle(editor, setlayers)
+                );
+              }}
+            >
+              Add circle
             </button>
-            <button onClick={onAddCircle}>Add circle</button>
-            <button onClick={onAddRectangle} disabled={!cropImage}>
+            <button
+              onClick={() => {
+                import("./Functions/AddShapes/AddShapes").then((data) =>
+                  data.addTriangle(editor, setlayers)
+                );
+              }}
+            >
+              Add Triangle
+            </button>
+            <button
+              onClick={() => {
+                import("./Functions/AddShapes/AddShapes").then((data) =>
+                  data.addRect(editor, setlayers)
+                );
+              }}
+            >
               Add Rectangle
             </button>
-
-            <button onClick={clear} disabled={!cropImage}>
+            <button
+              onClick={() => {
+                import("./Functions/AddShapes/AddShapes").then((data) =>
+                  data.addPolygon(editor, setlayers)
+                );
+              }}
+            >
+              Add Polygon
+            </button>
+            <button
+              onClick={() => {
+                import("./Functions/RemoveLayer/removeLayer").then((data) =>
+                  data.removeAll(editor, setlayers, setCaption)
+                );
+              }}
+              disabled={!cropImage}
+            >
               Clear
             </button>
-            <button onClick={removeSelectedObject} disabled={!cropImage}>
+            <button
+              onClick={() => {
+                import("./Functions/RemoveLayer/removeLayer").then((data) =>
+                  data.removeSelectedObj(editor)
+                );
+              }}
+              disabled={!cropImage}
+            >
               Delete
             </button>
 
-            <button onClick={exportSVG} disabled={!cropImage}>
+            <button
+              onClick={() => {
+                import("./Functions/SaveCanvas/saveCanvas").then((data) =>
+                  data.exportSVG(editor)
+                );
+              }}
+              id="dwnld"
+              disabled={!cropImage}
+            >
               {" "}
               ToSVG
             </button>
-            <button onClick={()=>{console.log(layers);}}> ShowLayers</button>
+            <button
+              onClick={() => {
+                import("./Functions/ShowLayers/showLayers").then((data) =>
+                  data.showLayers(layers)
+                );
+              }}
+            >
+              {" "}
+              ShowLayers
+            </button>
           </div>
         </div>
       </div>

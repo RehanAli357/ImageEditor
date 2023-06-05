@@ -3,7 +3,7 @@
 }
 .HomePage .BgImage {
   width: 100%;
-  min-height: 90vh;
+  height: 90vh;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -40,17 +40,62 @@
   margin-top: 5%;
 }
 .HomePage .BgImage .ExploreBtn button {
-  font-size: 2rem;
-  padding: 0.2em 1em;
-  background-color: black;
-  border-radius: 10em;
-  border: 0.1em solid black;
-  color: aliceblue;
-  transition: 0.2s;
+  border-radius: 15px;
+  border-width: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  padding: 1em 2em;
+  border: 0;
+  background-color: #212121;
+  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  z-index: 2;
 }
-.HomePage .BgImage .ExploreBtn button:hover {
+.HomePage .BgImage .ExploreBtn button::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border-radius: 15px;
+  background-image: conic-gradient(#488cfb, #29dbbc, #ddf505, #ff9f0e, #e440bb, #655adc, #488cfb);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+          mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: rotate-hue linear 500ms infinite;
+  animation-play-state: paused;
+}
+.HomePage .BgImage .ExploreBtn button:hover::after {
+  animation-play-state: running;
   cursor: pointer;
-  transform: scale(1.2);
+}
+
+@keyframes rotate-hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+button,
+button::after {
+  box-sizing: border-box;
+}
+
+button:active {
+  --border-width: 5px;
 }
 
 @media (max-width: 609px) {
