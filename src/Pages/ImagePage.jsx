@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fabric } from "fabric";
+import { saveAs } from 'file-saver';
 import LoginContext from "../Context/LoginContext";
 import { ACCESS_KEY } from "../apiKeys";
 import "../Assets/Style/ImageCanva/imageCanva.css";
@@ -12,12 +13,12 @@ const ImagePage = () => {
   const [caption, setCaption] = useState("");
   const [isloading, setisLoading] = useState(true);
   const [isdisplay, setisDisplay] = useState("flex");
+
   const { isLogin } = useContext(LoginContext);
   const [cropImage] = useState(true);
   const { editor, onReady } = useFabricJSEditor();
   const params = useParams();
   const navigate = useNavigate();
-  console.log();
   useEffect(() => {
     const getImg = async () => {
       try {
@@ -115,21 +116,6 @@ const ImagePage = () => {
     editor.canvas.renderAll();
   }, [editor?.canvas.backgroundImage]);
 
-  const exportSVG = () => {
-    try {
-      const svg = editor.canvas.toSVG();
-      const blob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "image.svg";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   useEffect(() => {
     if (isLogin === false) {
       navigate("/Login");
@@ -140,6 +126,7 @@ const ImagePage = () => {
       });
     }
   }, [isLogin, navigate]);
+
   return (
     <React.Fragment>
       <div className="ImageCanva">
@@ -247,16 +234,16 @@ const ImagePage = () => {
             </button>
 
             <button
+              id="dnwnld"
               onClick={() => {
                 import("./Functions/SaveCanvas/saveCanvas").then((data) =>
-                  data.exportSVG(editor)
+                  data.exportSVG(editor,saveAs)
                 );
               }}
-              id="dwnld"
               disabled={!cropImage}
             >
               {" "}
-              ToSVG
+              Download
             </button>
             <button
               onClick={() => {
